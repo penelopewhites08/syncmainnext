@@ -19,6 +19,7 @@ import {
   connectorsForWallets,
   // getDefaultWallets,
 } from '@rainbow-me/rainbowkit';
+import Script from 'next/script';
 
 const { chains, publicClient } = configureChains(
   [mainnet, arbitrum, bsc],
@@ -83,7 +84,7 @@ export default function RootLayout({ children }) {
         </WagmiConfig>
     </body>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
+    <Script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossOrigin="anonymous" referrerPolicy="no-referrer"></Script>
     
     </html>
   )
