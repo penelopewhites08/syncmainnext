@@ -77,6 +77,7 @@ export default function RootLayout({ children }) {
     </head>
     
     <body>
+      
     <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains} theme={darkTheme()} >
             {children}

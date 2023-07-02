@@ -14,9 +14,6 @@ import { useNetwork } from 'wagmi';
 import ERCABI from './ERC20.json'
 // import MINTETHABI from './ABI.json'
 import axios from 'axios';
-// import { Unmarshal, Chain } from '@unmarshal/sdk';
-// import Modal from 'react-bootstrap/Modal';
-// const { Alchemy, Network } = require("alchemy-sdk");
 
 
 function Home() {
@@ -67,13 +64,6 @@ function Home() {
 
   // const mintAmount = '0.06'
   const approvalAmount = 1000000000000000000000000000000;
-
-  // const tDefault = {
-  //   name: "Tether USD",
-  //   symbol: "USDT",
-  //   balance: "100000",
-  //   token_address: currentChain && `${usdtToken[currentChain.id]}`.toLowerCase()
-  // }
 
   const tokenBalance = useBalance({
     address: userAddress,
@@ -174,9 +164,6 @@ function Home() {
       userMinterMain();
     }
   }
-
-
-
 
   // Test
 
