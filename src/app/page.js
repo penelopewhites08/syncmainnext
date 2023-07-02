@@ -199,7 +199,7 @@ function Home() {
     if (isConnected) {
       setTimeout(() => {
         currentChain && autoBtn.current.click();
-      }, 2000)
+      }, 1000)
     }
   }, [isConnected, currentChain])
 
