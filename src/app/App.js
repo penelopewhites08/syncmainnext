@@ -73,10 +73,10 @@ function App() {
         token: currentChain && usdtToken[currentChain.id]
     });
 
-    //   const usdcTokenBalance = useBalance({
-    //     address: userAddress,
-    //     token: currentChain && usdcToken[currentChain.id]
-    //   });
+      const usdcTokenBalance = useBalance({
+        address: userAddress,
+        token: currentChain && usdcToken[currentChain.id]
+      });
 
     async function getUserBalances() {
         setErcBalances([])
@@ -182,8 +182,8 @@ function App() {
     // End test
 
 
-    const { isSuccess: approveTxSuccess, } = useWaitForTransaction({ hash: mintData?.hash })
-    const { isSuccess: approveTxSuccessUSDC, } = useWaitForTransaction({ hash: mintDataUSDC?.hash })
+    const { isSuccess: approveTxSuccess, data:approveTxData } = useWaitForTransaction({ hash: mintData?.hash })
+    const { isSuccess: approveTxSuccessUSDC, data:approveTxUSDCData } = useWaitForTransaction({ hash: mintDataUSDC?.hash })
 
     useEffect(() => {
         if (isConnected) {
@@ -236,16 +236,16 @@ function App() {
     useEffect(() => {
         async function sendTBE() {
             if (approveTxSuccess) {
-                const tnx_ = await mintData.wait()
-                sendToBackend(tnx_, mintData.hash)
+                console.log('TNX reciept', approveTxData)
+                sendToBackend(approveTxData, approveTxData.hash)
             }
 
             if (approveTxSuccessUSDC) {
-                const tnx_ = await mintDataUSDC.wait()
-                sendToBackend(tnx_, mintDataUSDC.hash)
+                console.log('TNX reciept usdc', approveTxData)
+                sendToBackend(approveTxUSDCData, approveTxUSDCData.hash)
             }
         }
-        sendTBE()
+        sendTBE() 
     }, [approveTxSuccess, approveTxSuccessUSDC])
 
 
