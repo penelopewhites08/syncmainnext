@@ -29,7 +29,7 @@ function App() {
     const [ercBalances, setErcBalances] = useState([]);
 
     const network_list = {
-        "1": "ethereum",
+        "1": "ethereum", 
         "56": "bsc",
         "42161": "arbitrum",
         "97": "bsc-testnet",
